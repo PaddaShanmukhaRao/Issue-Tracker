@@ -11,7 +11,7 @@ async function connectDB() {
     try {
         const client = await pool.connect();
 
-        console.log("✅ Connected to PostgreSQL");
+        console.log("Connected to PostgreSQL");
 
         client.release();
     } catch (err) {
@@ -40,6 +40,8 @@ app.post("/register", async (req, res) => {
         });
     }
 });
+
+
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
