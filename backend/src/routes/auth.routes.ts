@@ -15,10 +15,10 @@
 import { Router, Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { pool } from "../db/database.js";
-import { validate } from "../middleware/validate.middleware.js";
-import { RegisterSchema, LoginSchema } from "../validators/schemas.js";
-import { UserRow, SafeUser } from "../types.js";
+import { pool } from "../db/database";
+import { validate } from "../middleware/validate.middleware";
+import { RegisterSchema, LoginSchema } from "../validators/schemas";
+import { UserRow, SafeUser } from "../types";
 
 const router = Router();
 

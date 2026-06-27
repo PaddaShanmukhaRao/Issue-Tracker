@@ -9,9 +9,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { initializeDatabase } from "./db/database.js";
-import authRoutes from "./routes/auth.routes.js";
-import issueRoutes from "./routes/issues.routes.js";
+import { initializeDatabase } from "./db/database";
+import authRoutes from "./routes/auth.routes";
+import issueRoutes from "./routes/issues.routes";
 
 // Load environment variables from .env before anything else runs.
 dotenv.config();
@@ -78,11 +78,11 @@ async function bootstrap() {
     await initializeDatabase();
 
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
-      console.log(`🌍 Environment: ${process.env.NODE_ENV ?? "development"}`);
+      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV ?? "development"}`);
     });
   } catch (err) {
-    console.error("❌ Failed to start server:", err);
+    console.error("Failed to start server:", err);
     process.exit(1); // Non-zero exit code signals failure to the OS / Docker
   }
 }

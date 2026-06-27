@@ -14,14 +14,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { Router, Request, Response } from "express";
-import { pool } from "../db/database.js";
-import { authenticateToken } from "../middleware/auth.middleware.js";
-import { validate } from "../middleware/validate.middleware.js";
+import { pool } from "../db/database";
+import { authenticateToken } from "../middleware/auth.middleware";
+import { validate } from "../middleware/validate.middleware";
 import {
   CreateIssueSchema,
   UpdateIssueSchema,
-} from "../validators/schemas.js";
-import { IssueRow } from "../types.js";
+} from "../validators/schemas";
+import { IssueRow } from "../types";
 
 const router = Router();
 
