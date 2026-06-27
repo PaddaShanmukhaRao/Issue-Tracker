@@ -1,0 +1,75 @@
+/* ── Tailwind directives ──────────────────────────────────────────────────── */
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@tailwind utilities;
+
+/* ── Base styles ─────────────────────────────────────────────────────────── */
+@layer base {
+  /* Smooth scrolling + dark background for the whole app */
+  html {
+    scroll-behavior: smooth;
+    background-color: #0d1117;
+    color: #e6edf3;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar styling for the Kanban columns */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #161b22;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6e40c9;
+  }
+}
+
+/* ── Reusable component classes ──────────────────────────────────────────── */
+@layer components {
+  /* The glowing card used for Kanban issue cards */
+  .issue-card {
+    @apply bg-surface-800 border border-surface-600 rounded-lg p-4
+           transition-all duration-200 cursor-grab active:cursor-grabbing
+           hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10;
+  }
+
+  /* Used for the "dragging" ghost card state */
+  .issue-card-dragging {
+    @apply opacity-50 scale-105 rotate-1 border-accent;
+  }
+
+  /* Primary action button */
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-hover text-white font-medium
+           px-4 py-2 rounded-lg transition-colors duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Ghost/secondary button */
+  .btn-ghost {
+    @apply border border-surface-600 hover:border-surface-500
+           text-slate-400 hover:text-slate-200 font-medium
+           px-4 py-2 rounded-lg transition-colors duration-150;
+  }
+
+  /* Form input shared styling */
+  .form-input {
+    @apply w-full bg-surface-700 border border-surface-600
+           rounded-lg px-3 py-2 text-slate-200 placeholder-slate-500
+           focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent
+           transition-colors duration-150;
+  }
+}
