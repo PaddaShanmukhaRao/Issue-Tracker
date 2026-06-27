@@ -12,7 +12,7 @@ import axios from "axios";
 // Create an Axios instance. All requests go through /api, which Vite proxies
 // to the Express backend in development.
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: "http://localhost:3000/api",
   headers: {
     "Content-Type": "application/json",
   },

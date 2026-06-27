@@ -30,7 +30,7 @@ export async function initializeDatabase(): Promise<void> {
   const client = await pool.connect();
 
   try {
-    console.log("🔌 Connecting to PostgreSQL...");
+    console.log("Connecting to PostgreSQL...");
 
     // ── Enable UUID extension (needed for gen_random_uuid) ────────────────
     await client.query(`CREATE EXTENSION IF NOT EXISTS "pgcrypto";`);
@@ -102,9 +102,9 @@ export async function initializeDatabase(): Promise<void> {
         EXECUTE FUNCTION update_updated_at_column();
     `);
 
-    console.log("✅ Database schema ready");
+    console.log("Database schema ready");
   } catch (err) {
-    console.error("❌ Database initialisation failed:", err);
+    console.error("Database initialisation failed:", err);
     throw err; // Bubble up so the server refuses to start with a broken DB
   } finally {
     // Always release the client back to the pool — even if an error occurred.
