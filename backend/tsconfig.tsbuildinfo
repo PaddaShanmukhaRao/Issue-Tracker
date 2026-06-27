@@ -1,1 +1,1 @@
-{"root":["./src/server.ts","./src/db/database.ts"],"version":"6.0.3"}
+{"root":["./src/server.ts","./src/types.ts","./src/db/database.ts","./src/middleware/auth.middleware.ts","./src/middleware/validate.middleware.ts","./src/routes/auth.routes.ts","./src/routes/issues.routes.ts","./src/validators/schemas.ts"],"version":"5.9.3"}
